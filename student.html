@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студент</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Предметы и оценки</h1>
+        <table class="tabl" id="rus">
+            <tr>
+                <th>Предмет</th>
+                <th class="id">1 пара</th>
+                <th class="id">2 пара</th>
+                <th class="id">3 пара</th>
+                <th class="id">4 пара</th>
+                <th class="id">5 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th class="id">6 пара</th>
+                <th>Количество баллов</th>
+                <th>Оценка за семестр</th>
+            </tr>
+            <tr>
+                <td>Русский язык</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="ocen2">5</td>
+                <td class="sum2"></td>
+                <td class="sum-itogo2"></td>
+            </tr>
+            <tr>
+                <td>Математика</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="ocen3">5</td>
+                <td class="sum3"></td>
+                <td class="sum-itogo3"></td>
+            </tr>
+            <tr>
+                <td>Английский</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="ocen1">5</td>
+                <td class="sum1"></td>
+                <td class="sum-itogo"></td>
+            </tr>
+        </table>
+    </main>
+    <script>
+        const sumCells = document.querySelectorAll('.ocen1');
+        const sumCells2 = document.querySelectorAll('.ocen2');
+        const sumCells3 = document.querySelectorAll('.ocen3');
+        let sum=0;
+        let sum2=0;
+        let sum3=0;
+        for(let i=0;i<sumCells.length;i++){
+            sum=sum+(+sumCells[i].textContent);
+        }
+        for(let i=0;i<sumCells2.length;i++){
+            sum2=sum2+(+sumCells2[i].textContent);
+        }
+        for(let i=0;i<sumCells3.length;i++){
+            sum3=sum3+(+sumCells3[i].textContent);
+        }
+        console.log(sum);
+        if (sum>=85 && sum<=100) {
+            document.querySelector('.sum-itogo').textContent=5;
+            document.querySelector('.sum1').textContent=sum;
+        }
+        if (sum2>=85 && sum2<=100) {
+            document.querySelector('.sum-itogo2').textContent=5;
+            document.querySelector('.sum2').textContent=sum2;
+        }
+        if (sum3>=85 && sum3<=100) {
+            document.querySelector('.sum-itogo3').textContent=5;
+            document.querySelector('.sum3').textContent=sum3;
+        }
+        if (sum<=59) {
+            document.querySelector('.sum-itogo').textContent=2;
+            document.querySelector('.sum1').textContent=sum;
+        }
+        if (sum2<=59) {
+            document.querySelector('.sum-itogo2').textContent=2;
+            document.querySelector('.sum2').textContent=sum2;
+        }
+        if (sum3<=59) {
+            document.querySelector('.sum-itogo3').textContent=2;
+            document.querySelector('.sum3').textContent=sum3;
+        }
+        if (sum>=60 && sum<=74) {
+            document.querySelector('.sum-itogo').textContent=3;
+            document.querySelector('.sum1').textContent=sum;
+        }
+        if (sum2>=60 && sum2<=74) {
+            document.querySelector('.sum-itogo2').textContent=3;
+            document.querySelector('.sum2').textContent=sum2;
+        }
+        if (sum3>=60 && sum3<=74) {
+            document.querySelector('.sum-itogo3').textContent=3;
+            document.querySelector('.sum3').textContent=sum3;
+        }
+        if (sum>=75 && sum<=84) {
+            document.querySelector('.sum-itogo').textContent=4;
+            document.querySelector('.sum1').textContent=sum;
+        }
+        if (sum2>=75 && sum2<=84) {
+            document.querySelector('.sum-itogo2').textContent=4;
+            document.querySelector('.sum2').textContent=sum2;
+        }
+        if (sum3>=75 && sum3<=84) {
+            document.querySelector('.sum-itogo3').textContent=4;
+            document.querySelector('.sum3').textContent=sum3;
+        }
+    </script>
+</body>
+</html>
